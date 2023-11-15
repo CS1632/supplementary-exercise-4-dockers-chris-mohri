@@ -34,6 +34,7 @@ public class D3Test {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
+  
   @Before
   public void setUp() {
     ChromeOptions options = new ChromeOptions();
@@ -42,10 +43,12 @@ public class D3Test {
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
+
   @After
   public void tearDown() {
     driver.quit();
   }
+  
   @Test
   public void tEST1LINKS() {
     driver.get("http://localhost:8080/");
