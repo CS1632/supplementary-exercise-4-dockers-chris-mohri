@@ -35,7 +35,9 @@ public class D3Test {
   JavascriptExecutor js;
   @Before
   public void setUp() {
-    driver = new ChromeDriver();
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("--headless");
+    driver = new ChromeDriver(options);
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -54,7 +56,7 @@ public class D3Test {
     }
     assertEquals(vars.get("temp").toString(), "http://localhost:8080/reset");
   }
-  
+
   @Test
   public void tEST2RESET() {
     driver.get("http://localhost:8080/");
